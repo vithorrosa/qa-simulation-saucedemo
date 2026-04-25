@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA Simulation — SauceDemo</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 56px 24px;
+      text-align: center;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border-bottom: 1px solid #334155;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    header p {
+      max-width: 780px;
+      margin: 0 auto;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    section {
+      background: #111827;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      color: #ffffff;
+      margin-top: 0;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    th, td {
+      border: 1px solid #334155;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #1e293b;
+      color: #ffffff;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code, pre {
+      background: #020617;
+      color: #e5e7eb;
+      border-radius: 8px;
+    }
+
+    pre {
+      padding: 14px;
+      overflow-x: auto;
+      border: 1px solid #334155;
+    }
+
+    .status {
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    .pending {
+      color: #facc15;
+      font-weight: bold;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #1e293b;
+      border: 1px solid #475569;
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin: 4px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #94a3b8;
+      border-top: 1px solid #334155;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🧪 QA Simulation — SauceDemo</h1>
+    <p>
+      Simulação prática da rotina de um QA Júnior testando um e-commerce com
+      casos de teste manuais, evidências, bug report e automação E2E com Cypress.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>📌 Sobre o projeto</h2>
+      <p>
+        Este projeto foi criado para praticar um fluxo real de qualidade de software,
+        passando por planejamento, documentação, execução manual, registro de evidências,
+        automação de testes e versionamento no GitHub.
+      </p>
+    </section>
+
+    <section>
+      <h2>🌐 Aplicação testada</h2>
+      <table>
+        <tr>
+          <th>Item</th>
+          <th>Informação</th>
+        </tr>
+        <tr>
+          <td>Aplicação</td>
+          <td>SauceDemo</td>
+        </tr>
+        <tr>
+          <td>URL</td>
+          <td><a href="https://www.saucedemo.com/" target="_blank">https://www.saucedemo.com/</a></td>
+        </tr>
+        <tr>
+          <td>Tipo</td>
+          <td>E-commerce de demonstração</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>✅ Funcionalidades</h2>
+      <table>
+        <tr>
+          <th>Funcionalidade</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Login</td>
+          <td class="status">Concluído</td>
+        </tr>
+        <tr>
+          <td>Carrinho</td>
+          <td class="pending">Próximo passo</td>
+        </tr>
+        <tr>
+          <td>Checkout</td>
+          <td class="pending">Próximo passo</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>🧾 Testes manuais — Login</h2>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Cenário</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>CT-001</td>
+          <td>Login com credenciais válidas</td>
+          <td class="status">Passou</td>
+        </tr>
+        <tr>
+          <td>CT-002</td>
+          <td>Login com usuário bloqueado</td>
+          <td class="status">Passou</td>
+        </tr>
+        <tr>
+          <td>CT-003</td>
+          <td>Login sem preencher usuário</td>
+          <td class="status">Passou</td>
+        </tr>
+        <tr>
+          <td>CT-004</td>
+          <td>Login sem preencher senha</td>
+          <td class="status">Passou</td>
+        </tr>
+        <tr>
+          <td>CT-005</td>
+          <td>Login com senha inválida</td>
+          <td class="status">Passou</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>🤖 Testes automatizados</h2>
+      <p>Os testes automatizados foram implementados com Cypress.</p>
+
+      <p><strong>Arquivo principal:</strong></p>
+      <pre><code>cypress/e2e/login.cy.js</code></pre>
+
+      <div>
+        <span class="badge">Cypress</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">E2E Testing</span>
+        <span class="badge">GitHub</span>
+        <span class="badge">Markdown</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>🖼️ Evidências</h2>
+      <p>As evidências da execução manual estão disponíveis no repositório:</p>
+
+      <ul>
+        <li><a href="evidencias/prints/CT-001-login-sucesso.png">CT-001 — Login com sucesso</a></li>
+        <li><a href="evidencias/prints/CT-002-usuario-bloqueado.png">CT-002 — Usuário bloqueado</a></li>
+        <li><a href="evidencias/prints/CT-003-usuario-obrigatorio.png">CT-003 — Usuário obrigatório</a></li>
+        <li><a href="evidencias/prints/CT-004-senha-obrigatoria.png">CT-004 — Senha obrigatória</a></li>
+        <li><a href="evidencias/prints/CT-005-senha-invalida.png">CT-005 — Senha inválida</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📁 Documentação</h2>
+      <ul>
+        <li><a href="docs/plano-de-teste.md">Plano de teste</a></li>
+        <li><a href="test-cases/login-test-cases.md">Casos de teste — Login</a></li>
+        <li><a href="test-cases/login-test-execution.md">Execução dos testes — Login</a></li>
+        <li><a href="docs/relatorio-execucao-login.md">Relatório de execução — Login</a></li>
+        <li><a href="bug-reports/BUG-001-login-usuario-bloqueado.md">Bug report — BUG-001</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📂 Estrutura do projeto</h2>
+      <pre><code>qa-simulation-saucedemo/
+├── bug-reports/
+│   └── BUG-001-login-usuario-bloqueado.md
+├── cypress/
+│   └── e2e/
+│       └── login.cy.js
+├── docs/
+│   ├── plano-de-teste.md
+│   └── relatorio-execucao-login.md
+├── evidencias/
+│   └── prints/
+│       ├── CT-001-login-sucesso.png
+│       ├── CT-002-usuario-bloqueado.png
+│       ├── CT-003-usuario-obrigatorio.png
+│       ├── CT-004-senha-obrigatoria.png
+│       └── CT-005-senha-invalida.png
+├── test-cases/
+│   ├── login-test-cases.md
+│   └── login-test-execution.md
+├── .gitignore
+├── cypress.config.js
+├── package.json
+├── package-lock.json
+└── README.md</code></pre>
+    </section>
+
+    <section>
+      <h2>▶️ Como executar</h2>
+
+      <p><strong>1. Clone o repositório:</strong></p>
+      <pre><code>git clone https://github.com/vithorrosa/qa-simulation-saucedemo.git</code></pre>
+
+      <p><strong>2. Entre na pasta do projeto:</strong></p>
+      <pre><code>cd qa-simulation-saucedemo</code></pre>
+
+      <p><strong>3. Instale as dependências:</strong></p>
+      <pre><code>npm install</code></pre>
+
+      <p><strong>4. Execute os testes em modo headless:</strong></p>
+      <pre><code>npx cypress run</code></pre>
+
+      <p><strong>Ou abra a interface gráfica do Cypress:</strong></p>
+      <pre><code>npx cypress open</code></pre>
+    </section>
+
+    <section>
+      <h2>📊 Status atual</h2>
+      <table>
+        <tr>
+          <th>Entrega</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Plano de teste</td>
+          <td class="status">Concluído</td>
+        </tr>
+        <tr>
+          <td>Casos de teste de login</td>
+          <td class="status">Concluído</td>
+        </tr>
+        <tr>
+          <td>Execução manual</td>
+          <td class="status">Concluído</td>
+        </tr>
+        <tr>
+          <td>Evidências</td>
+          <td class="status">Concluído</td>
+        </tr>
+        <tr>
+          <td>Bug report / modelo</td>
+          <td class="status">Concluído</td>
+        </tr>
+        <tr>
+          <td>Relatório de execução</td>
+          <td class="status">Concluído</td>
+        </tr>
+        <tr>
+          <td>Automação Cypress de login</td>
+          <td class="status">Concluído</td>
+        </tr>
+        <tr>
+          <td>Refatoração inicial dos testes</td>
+          <td class="status">Concluído</td>
+        </tr>
+        <tr>
+          <td>Testes de carrinho</td>
+          <td class="pending">Próximo passo</td>
+        </tr>
+        <tr>
+          <td>Testes de checkout</td>
+          <td class="pending">Próximo passo</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>🚀 Próximos passos</h2>
+      <ul>
+        <li>Criar casos de teste para carrinho</li>
+        <li>Executar testes manuais do carrinho</li>
+        <li>Registrar evidências do fluxo de carrinho</li>
+        <li>Automatizar testes de carrinho com Cypress</li>
+        <li>Criar relatório de execução do carrinho</li>
+        <li>Configurar GitHub Pages para apresentação do projeto</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>👨‍💻 Autor</h2>
+      <p><strong>Vithor Rosa</strong> — QA Engineer</p>
+      <ul>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/vitor-rosa-2886883b8/" target="_blank">vitor-rosa</a></li>
+        <li>Email: <a href="mailto:vithorrosa@outlook.com">vithorrosa@outlook.com</a></li>
+        <li>GitHub: <a href="https://github.com/vithorrosa/qa-simulation-saucedemo" target="_blank">qa-simulation-saucedemo</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>QA Simulation — SauceDemo · Vithor Rosa · 2025</p>
+  </footer>
+
+</body>
+</html>

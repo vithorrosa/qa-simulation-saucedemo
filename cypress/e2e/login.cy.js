@@ -22,3 +22,13 @@ describe('Login - SauceDemo', () => {
       .and('contain', 'Sorry, this user has been locked out.')
   })
 })
+it('CT-003 - Deve exibir erro ao tentar login sem preencher usuário', () => {
+  cy.visit('https://www.saucedemo.com/')
+
+  cy.get('[data-test="password"]').type('secret_sauce')
+  cy.get('[data-test="login-button"]').click()
+
+  cy.get('[data-test="error"]')
+    .should('be.visible')
+    .and('contain', 'Username is required')
+})

@@ -16,7 +16,7 @@
 
 | Total de casos | Passaram | Falharam | Bloqueados | Não executados |
 |---|---:|---:|---:|---:|
-| 5 | 0 | 0 | 0 | 5 |
+| 5 | 5 | 0 | 0 | 0 |
 
 ---
 
@@ -26,36 +26,36 @@
 
 **Status:** Passou  
 **Resultado obtido:** O sistema autenticou o usuário e redirecionou para a página de produtos.  
-**Evidência:** evidencias/prints/CT-001-login-sucesso.png 
+**Evidência:** evidencias/prints/CT-001-login-sucesso.png  
 
 ---
 
 ### CT-002 — Login com usuário bloqueado
 
-**Status:** Não executado  
-**Resultado obtido:** Aguardando execução.  
-**Evidência:** Não aplicável no momento.  
+**Status:** Passou  
+**Resultado obtido:** O sistema exibiu mensagem informando que o usuário está bloqueado e não permitiu o acesso.  
+**Evidência:** evidencias/prints/CT-002-login-bloqueado.png  
 
 ---
 
 ### CT-003 — Login sem preencher usuário
 
-**Status:** Não executado  
-**Resultado obtido:** Aguardando execução.  
-**Evidência:** Não aplicável no momento.  
+**Status:** Passou  
+**Resultado obtido:** O sistema exibiu corretamente a mensagem de campo obrigatório para usuário.  
+**Evidência:** evidencias/prints/CT-003-login-usuario-obrigatorio.png  
 
 ---
 
 ### CT-004 — Login sem preencher senha
 
-**Status:** Não executado  
-**Resultado obtido:** Aguardando execução.  
-**Evidência:** Não aplicável no momento.  
+**Status:** Passou  
+**Resultado obtido:** O sistema exibiu corretamente a mensagem de campo obrigatório para senha.  
+**Evidência:** evidencias/prints/CT-004-login-senha-obrigatoria.png  
 
 ---
 
 ### CT-005 — Login com senha inválida
 
-**Status:** Não executado  
-**Resultado obtido:** Aguardando execução.  
-**Evidência:** Não aplicável no momento.  
+**Status:** Passou  
+**Resultado obtido:** O sistema exibiu corretamente a mensagem de credenciais inválidas.  
+**Evidência:** evidencias/prints/CT-005-login-senha-invalida.png  

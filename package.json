@@ -1,0 +1,27 @@
+{
+  "name": "qa-simulation-saucedemo",
+  "version": "1.0.0",
+  "description": "Simulação de rotina real de QA Júnior testando um e-commerce com casos de teste manuais, bug reports e automação com Cypress.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vithorrosa/qa-simulation-saucedemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vithorrosa/qa-simulation-saucedemo/issues"
+  },
+  "homepage": "https://github.com/vithorrosa/qa-simulation-saucedemo#readme",
+  "devDependencies": {
+    "cypress": "^15.14.1"
+  }
+}

@@ -109,3 +109,31 @@ O sistema deve impedir o login e exibir mensagem informando que a senha é obrig
 ### Status
 
 Pendente
+
+---
+
+## CT-005 — Login com senha inválida
+
+**Prioridade:** Alta  
+**Tipo:** Funcional negativo  
+**Pré-condição:** Usuário deve estar na página de login.
+
+### Massa de teste
+
+- Usuário: standard_user
+- Senha: senha_invalida
+
+### Passos
+
+1. Acessar a aplicação SauceDemo.
+2. Preencher o campo usuário com `standard_user`.
+3. Preencher o campo senha com `senha_invalida`.
+4. Clicar no botão Login.
+
+### Resultado esperado
+
+O sistema deve impedir o login e exibir mensagem informando que usuário e senha não correspondem.
+
+### Status
+
+Pendente

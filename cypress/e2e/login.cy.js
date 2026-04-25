@@ -42,3 +42,14 @@ it('CT-004 - Deve exibir erro ao tentar login sem preencher senha', () => {
     .should('be.visible')
     .and('contain.text', 'Password is required')
 })
+it('CT-005 - Deve exibir erro ao tentar login com senha inválida', () => {
+  cy.visit('https://www.saucedemo.com/')
+
+  cy.get('[data-test="username"]').type('standard_user')
+  cy.get('[data-test="password"]').type('senha_invalida')
+  cy.get('[data-test="login-button"]').click()
+
+  cy.get('[data-test="error"]')
+    .should('be.visible')
+    .and('contain.text', 'Username and password do not match any user in this service')
+})

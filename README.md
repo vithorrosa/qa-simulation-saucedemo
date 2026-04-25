@@ -228,8 +228,8 @@ npx cypress open
 
 ---
 
-👨‍💻 Autor
-Vithor Rosa — QA Engineer
+## 👨‍💻 Autor
 
-LinkedIn: vitor-rosa
-Email: vithorrosa@outlook.com
+**Vithor Rosa** — QA Engineer
+- LinkedIn: [vitor-rosa](https://www.linkedin.com/in/vitor-rosa-2886883b8/)
+- Email: vithorrosa@outlook.com

@@ -1,55 +1,56 @@
 describe('Login - SauceDemo', () => {
-    it('CT-001 - Deve realizar login com credenciais válidas', () => {
-        cy.visit('https://www.saucedemo.com/')
+  beforeEach(() => {
+    cy.visit('https://www.saucedemo.com/')
+  })
+// Permite testar cenários com usuário ou senha vazios sem tentar digitar campos inexistentes.
+  function preencherLogin(usuario, senha) {
+    if (usuario) {
+      cy.get('[data-test="username"]').type(usuario)
+    }
 
-        cy.get('[data-test="username"]').type('standard_user')
-        cy.get('[data-test="password"]').type('secret_sauce')
-        cy.get('[data-test="login-button"]').click()
+    if (senha) {
+      cy.get('[data-test="password"]').type(senha)
+    }
 
-        cy.url().should('include', '/inventory.html')
-        cy.get('[data-test="title"]').should('contain', 'Products')
-    })
+    cy.get('[data-test="login-button"]').click()
+  }
 
-    it('CT-002 - Deve bloquear login com usuário bloqueado', () => {
-        cy.visit('https://www.saucedemo.com/')
+  it('CT-001 - Deve realizar login com credenciais válidas', () => {
+    preencherLogin('standard_user', 'secret_sauce')
 
-        cy.get('[data-test="username"]').type('locked_out_user')
-        cy.get('[data-test="password"]').type('secret_sauce')
-        cy.get('[data-test="login-button"]').click()
+    cy.url().should('include', '/inventory.html')
+    cy.get('[data-test="title"]').should('contain.text', 'Products')
+  })
 
-        cy.get('[data-test="error"]')
-            .should('be.visible')
-            .and('contain', 'Sorry, this user has been locked out.')
-    })
-})
-it('CT-003 - Deve exibir erro ao tentar login sem preencher usuário', () => {
-  cy.visit('https://www.saucedemo.com/')
+  it('CT-002 - Deve bloquear login com usuário bloqueado', () => {
+    preencherLogin('locked_out_user', 'secret_sauce')
 
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
+    cy.get('[data-test="error"]')
+      .should('be.visible')
+      .and('contain.text', 'Sorry, this user has been locked out.')
+  })
 
-  cy.get('[data-test="error"]')
-    .should('be.visible')
-    .and('contain.text', 'Username is required')
-})
-it('CT-004 - Deve exibir erro ao tentar login sem preencher senha', () => {
-  cy.visit('https://www.saucedemo.com/')
+  it('CT-003 - Deve exibir erro ao tentar login sem preencher usuário', () => {
+    preencherLogin('', 'secret_sauce')
 
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="login-button"]').click()
+    cy.get('[data-test="error"]')
+      .should('be.visible')
+      .and('contain.text', 'Username is required')
+  })
 
-  cy.get('[data-test="error"]')
-    .should('be.visible')
-    .and('contain.text', 'Password is required')
-})
-it('CT-005 - Deve exibir erro ao tentar login com senha inválida', () => {
-  cy.visit('https://www.saucedemo.com/')
+  it('CT-004 - Deve exibir erro ao tentar login sem preencher senha', () => {
+    preencherLogin('standard_user', '')
 
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('senha_invalida')
-  cy.get('[data-test="login-button"]').click()
+    cy.get('[data-test="error"]')
+      .should('be.visible')
+      .and('contain.text', 'Password is required')
+  })
 
-  cy.get('[data-test="error"]')
-    .should('be.visible')
-    .and('contain.text', 'Username and password do not match any user in this service')
+  it('CT-005 - Deve exibir erro ao tentar login com senha inválida', () => {
+    preencherLogin('standard_user', 'senha_invalida')
+
+    cy.get('[data-test="error"]')
+      .should('be.visible')
+      .and('contain.text', 'Username and password do not match any user in this service')
+  })
 })

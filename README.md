@@ -228,8 +228,8 @@ npx cypress open
 
 ---
 
-## 👨‍💻 Autor
+👨‍💻 Autor
+Vithor Rosa — QA Engineer
 
-**Vithor Rosa**
-
-Projeto desenvolvido como prática de QA Manual e Automação de Testes.
+LinkedIn: vitor-rosa
+Email: vithorrosa@outlook.com
